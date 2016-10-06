@@ -19,21 +19,86 @@ GPIO.setup(blue, GPIO.OUT)
 
 colorList = {0: 'red',
              1: 'green',
-             2: 'blue'}
+             2: 'blue',
+             3: "yellow",
+             4: 'purple',
+             5: 'cyan'
+             }
 
-userChoise = int(raw_input("Please choose a number (red = 0, green = 1, blue = 2): "))
+x = 10
 
+userChoise = int(
+     raw_input("Please choose a number\
+     (red = 0, green = 1, blue = 2, yellow = 3, purple = 4, cyan = 5 ): "))
+print userChoise
+
+
+def clean():
+    GPIO.output(red, True)
+    GPIO.output(green, True)
+    GPIO.output(blue, True)
 
 def blink(a):
     if a == 0:
-        GPIO.output(red, GPIO.OUT)
         print "blinking red"
+        clean()
+        while True:
+            GPIO.output(red, False)
+            sleep(0.4)
+            GPIO.output(red, True)
+            sleep(0.4)
+
     elif a == 1:
-        GPIO.output(green, GPIO.OUT)
         print "blinking green"
+        clean()
+        while True:
+            GPIO.output(green, False)
+            sleep(0.4)
+            GPIO.output(green, True)
+            sleep(0.4)
+
     elif a == 2:
-        GPIO.output(blue, GPIO.OUT)
         print "blinking blue"
+        clean()
+        while True:
+            GPIO.output(blue, False)
+            sleep(0.4)
+            GPIO.output(blue, True)
+            sleep(0.4)
+
+    elif a == 3:
+        print "blinking yellow"
+        clean()
+        while True:
+            GPIO.output(red, False)
+            GPIO.output(green, False)
+            sleep(0.4)
+            GPIO.output(red, True)
+            GPIO.output(green, True)
+            sleep(0.4)
+
+    elif a == 4:
+        print "blinking purple"
+        clean()
+        while True:
+            GPIO.output(red, False)
+            GPIO.output(blue, False)
+            sleep(0.4)
+            GPIO.output(red, True)
+            GPIO.output(blue, True)
+            sleep(0.4)
+
+    elif a == 5:
+        print "blinking cyan"
+        clean()
+        while True:
+            GPIO.output(blue, False)
+            GPIO.output(green, False)
+            sleep(0.4)
+            GPIO.output(blue, True)
+            GPIO.output(green, True)
+            sleep(0.4)
+
 
 blink(userChoise)
 
