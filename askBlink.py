@@ -3,6 +3,11 @@ import RPi.GPIO as GPIO
 # import a sleep function from time module
 from time import sleep
 
+ import Raspberry Pi GPIO support into Python environment
+import RPi.GPIO as GPIO
+# import a sleep function from time module
+from time import sleep
+
 # GPIO number where the led is connected
 red = 10
 green = 22
@@ -22,14 +27,15 @@ colorList = {0: 'red',
              2: 'blue',
              3: "yellow",
              4: 'purple',
-             5: 'cyan'
-             }
+             5: 'cyan',
+             6: 'white'
+              }
 
 x = 10
 
 userChoise = int(
      raw_input("Please choose a number\
-     (red = 0, green = 1, blue = 2, yellow = 3, purple = 4, cyan = 5 ): "))
+     (red = 0, green = 1, blue = 2, yellow = 3, purple = 4, cyan = 5, white = 6 ): "))
 print userChoise
 
 
@@ -97,6 +103,19 @@ def blink(a):
             sleep(0.4)
             GPIO.output(blue, True)
             GPIO.output(green, True)
+            sleep(0.4)
+            
+    elif a== 6:
+        print "blinking white"
+        clean()
+        while True:
+            GPIO.output(blue, False)
+            GPIO.output(green, False)
+            GPIO.output(red, False)
+            sleep(0.4)
+            GPIO.output(blue, True)
+            GPIO.output(green, True)             
+            GPIO.output(red, True)
             sleep(0.4)
 
 
