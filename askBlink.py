@@ -21,19 +21,19 @@ colorList = {0: 'red',
              1: 'green',
              2: 'blue'}
 
-userChoise = int(input("Please choose a number (red = 0, green = 1, blue = 2): "))
-print(userChoise)
+userChoise = int(raw_input("Please choose a number (red = 0, green = 1, blue = 2): "))
+print userChoise
 
 
 def blink(a):
     if a == 0:
         GPIO.setup(red, GPIO.OUT)
-        return print("blinking red")
-    elif a == 1:
+        return "blinking red"
+    elif a == 1:""
         GPIO.setup(green, GPIO.OUT)
-        return print("blinking green")
+        return "blinking green"
     elif a == 2:
         GPIO.setup(blue, GPIO.OUT)
-        return print("blinking blue")
+        return "blinking blue
 
 blink(userChoise)
