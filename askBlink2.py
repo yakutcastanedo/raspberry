@@ -22,12 +22,18 @@ colorList = {0: 'red',
              2: 'blue'}
 
 userChoise = int(raw_input("Please choose a number (red = 0, green = 1, blue = 2): "))
+print userChoise
 
+def clean():
+    GPIO.output(red, True)
+    GPIO.output(green, True)
+    GPIO.output(blue, True)
 
 def blink(a):
 
     if a == 0:
         print "blinking red"
+        clean()
         while True:
             GPIO.setup(red, False)
             sleep(0.4)
@@ -36,6 +42,7 @@ def blink(a):
 
     elif a == 1:
         print "blinking green"
+        clean()
         while True:
             GPIO.setup(green, False)
             sleep(0.4)
@@ -44,6 +51,7 @@ def blink(a):
 
     elif a == 2:
         print "blinking blue"
+        clean()
         while True:
             GPIO.setup(blue, False)
             sleep(0.4)
