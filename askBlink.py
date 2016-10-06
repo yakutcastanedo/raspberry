@@ -29,11 +29,11 @@ def blink(a):
     if a == 0:
         GPIO.setup(red, GPIO.OUT)
         return "blinking red"
-    elif a == 1:""
+    elif a == 1:
         GPIO.setup(green, GPIO.OUT)
         return "blinking green"
     elif a == 2:
         GPIO.setup(blue, GPIO.OUT)
-        return "blinking blue
+        return "blinking blue"
 
 blink(userChoise)
