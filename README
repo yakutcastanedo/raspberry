@@ -1,2 +1,7 @@
-This is masaki's repository.
-Mark doesn't think so)
+This is masaki's repository for raspberry pi.
+
+Pin layout for LED.
+Red = 10
+Green = 22
+Blue = 27
+ 
